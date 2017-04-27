@@ -9,7 +9,7 @@
   <!-- Define a traditional camel context here -->
   <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
     <route>      	
-      <from  uri="twitter://timeline/home?type=polling&amp;delay=10000"></from>
+      <from  uri="twitter://search?keywords=OpenShiftRoadmap&amp;type=polling&amp;delay=10000"></from>
       <to uri="bean:myTransformer?method=transform"/>
       <log message=">>> ${body}"/>
     </route>
