@@ -6,7 +6,7 @@
     "kind" : "Service",
     "metadata" : {
       "annotations" : {
-        "fabric8.io/git-commit" : "b893d0555a433170e2d16d9c3558153e12468bae",
+        "fabric8.io/git-commit" : "a1541419de7eff98cee5ee61846f1b26629174bb",
         "fabric8.io/iconUrl" : "img/icons/camel.svg",
         "fabric8.io/git-branch" : "master"
       },
@@ -37,7 +37,7 @@
     "kind" : "DeploymentConfig",
     "metadata" : {
       "annotations" : {
-        "fabric8.io/git-commit" : "b893d0555a433170e2d16d9c3558153e12468bae",
+        "fabric8.io/git-commit" : "a1541419de7eff98cee5ee61846f1b26629174bb",
         "fabric8.io/iconUrl" : "img/icons/camel.svg",
         "fabric8.io/git-branch" : "master",
         "fabric8.io/metrics-path" : "dashboard/file/camel-routes.json/?var-project=twitter&var-version=1.0-SNAPSHOT"
@@ -66,7 +66,7 @@
       "template" : {
         "metadata" : {
           "annotations" : {
-            "fabric8.io/git-commit" : "b893d0555a433170e2d16d9c3558153e12468bae",
+            "fabric8.io/git-commit" : "a1541419de7eff98cee5ee61846f1b26629174bb",
             "fabric8.io/iconUrl" : "img/icons/camel.svg",
             "fabric8.io/git-branch" : "master",
             "fabric8.io/metrics-path" : "dashboard/file/camel-routes.json/?var-project=twitter&var-version=1.0-SNAPSHOT"

@@ -27,10 +27,12 @@
 		<route>
 			<from
 				uri="twitter://search?keywords=OpenShiftPacman&amp;type=polling&amp;delay=3500"></from>
+				<log message="body before - ${body}"/>
 				<process ref="queueProcessor"/>
 				<recipientList>
 					<simple>amqp:queue:${exchange.context.getProperties.get('queueName')}</simple>
-				</recipientList>				
+				</recipientList>
+				<log message="body after - ${body}"/>
 		</route>
 	</camelContext>
 
