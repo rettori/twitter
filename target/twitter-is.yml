@@ -10,6 +10,6 @@ items:
     tags:
     - from:
         kind: "ImageStreamImage"
-        name: "twitter@sha256:213a6d9dcc65ba9826fa1e4790c4cc74f8425fb87880bc9775d954647dd9aaf5"
+        name: "twitter@sha256:46d54838f3d7fbbd80ede1d9b39200b2bb4f70be18e50ac9f8842b5a632349b1"
         namespace: "game-apps-dev"
       name: "latest"

@@ -6,19 +6,31 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
 	<!-- Define a traditional camel context here -->
+	<bean id="jmsConnectionFactory" class="com.rettori.MyConnectionFactory">
+	</bean>
+
+	<bean id="jmsConfig" class="org.apache.camel.component.jms.JmsConfiguration">
+		<property name="connectionFactory" ref="jmsConnectionFactory" />
+	</bean>
+	
+	<bean id="amqp" class="org.apache.camel.component.amqp.AMQPComponent">
+		<property name="configuration" ref="jmsConfig" />
+	</bean>
+
+	<bean id="queueProcessor" class="com.rettori.QueueProcessor"/>
+
 	<camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+		<propertyPlaceholder id="properties" location="none"
+			ignoreMissingLocation="true">
+			<propertiesFunction ref="jmsConnectionFactory" />
+		</propertyPlaceholder>
 		<route>
 			<from
-				uri="twitter://search?keywords=OpenShiftRoadmap&amp;type=polling&amp;delay=10000"></from>
-			<to uri="bean:myTransformer?method=transform" />
-			<log message=">>> ${body}" />
-		</route>
-		<route>
-			<from uri="file:/Users/rettori/openshift/web-console/apps/twitter/twitter/queue" />
-			<setHeader headerName="queueName">
-				<simple>${body}</simple>
-			</setHeader>
-			<log message="${headers.queueName}"/>
+				uri="twitter://search?keywords=OpenShiftPacman&amp;type=polling&amp;delay=3500"></from>
+				<process ref="queueProcessor"/>
+				<recipientList>
+					<simple>amqp:queue:${exchange.context.getProperties.get('queueName')}</simple>
+				</recipientList>				
 		</route>
 	</camelContext>
 

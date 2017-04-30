@@ -3,7 +3,7 @@ apiVersion: "v1"
 kind: "Service"
 metadata:
   annotations:
-    fabric8.io/git-commit: "76c483aa189c11e6fe2f935df2b65be9a93817ce"
+    fabric8.io/git-commit: "b893d0555a433170e2d16d9c3558153e12468bae"
     fabric8.io/iconUrl: "img/icons/camel.svg"
     fabric8.io/git-branch: "master"
   labels:
